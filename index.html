@@ -15,7 +15,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
 </head>
 
-<body>
+<body class="body">
     <header class="header">
         <div class="header-top">
             <div class="container header-top__container">
@@ -57,6 +57,9 @@
                         </li>
                         <li class="top-nav__item">
                             <a href="#events" class="top-nav__link focus">События</a>
+                        </li>
+                        <li class="top-nav__item">
+                            <a href="#events" class="top-nav__link focus">Издания</a>
                         </li>
                         <li class="top-nav__item">
                             <a href="#projects" class="top-nav__link focus">Проекты</a>
@@ -278,6 +281,9 @@
                 </div>
             </div>
         </div>
+    </header>
+
+    <main>
         <section class="hero">
             <div class="swiper hero__swiper">
                 <div class="swiper-wrapper">
@@ -296,9 +302,6 @@
                 </div>
             </div>
         </section>
-    </header>
-
-    <main>
 
         <section id="about" class="about">
             <div class="container about__container">
@@ -327,50 +330,10 @@
               </select>
                         </div>
 
+                        <div>
+                            <p class="gallery-descr">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a href="#" class="gallery-descr__link">авторизуйтесь</a>, либо воспользуйтесь лицензией. </p>
+                        </div>
 
-                        <label class="form-categories__label">
-            <input type="checkbox" class="form-categories__input">
-            <span class="form-categories__mark">XIX век</span>
-            <svg class="form-categories__label-image" width="13" height="12" viewbox="0 0 13 12" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
-                fill="var(--focus-color)" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
-                fill="var(--focus-color)" />
-            </svg>
-          </label>
-
-
-                        <label class="form-categories__label">
-          <input type="checkbox" checked class="form-categories__input">
-          <span class="form-categories__mark">XX век</span>
-          <svg class="form-categories__label-image" width="13" height="12" viewbox="0 0 13 12" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
-              fill="var(--focus-color)" />
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
-              fill="var(--focus-color)" />
-          </svg>
-        </label>
-
-
-                        <label class="form-categories__label">
-        <input type="checkbox" class="form-categories__input">
-        <span class="form-categories__mark">Современность</span>
-        <svg class="form-categories__label-image" width="13" height="12" viewbox="0 0 13 12" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
-            fill="var(--focus-color)" />
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
-            fill="var(--focus-color)" />
-        </svg>
-      </label>
 
 
                     </div>
@@ -1048,24 +1011,24 @@
                                     <source media="(max-width: 500px)" srcset="img/adaptive/events/card1-1024.jpg">
                                     <source media="(max-width: 768px)" srcset="img/adaptive/events/card1-768.jpg">
                                     <source media="(max-width: 1024px)" srcset="img/adaptive/events/card1-1024.jpg">
-                                    <img src="img/events/card1.jpg" alt="" aria-hidden="true" class="events-slide__image">
+                                    <img src="img/events/card1.jpg" alt="" aria-hidden="true" class="events-swiper__image">
                                 </picture>
-                                <div class="events-slide__info">
-                                    <div class="events-slide__location">
-                                        <div class="events-slide__location-place">
+                                <div class="events-swiper__info">
+                                    <div class="events-swiper__location">
+                                        <div class="events-swiper__location-place">
                                             Музей им. Щусева
                                         </div>
-                                        <div class="events-slide__location-time">
+                                        <div class="events-swiper__location-time">
                                             с 20 марта по 30 апреля
                                         </div>
                                     </div>
-                                    <h3 class="subtitle events-slide__title">
+                                    <h3 class="subtitle events-swiper__title">
                                         Книжная гравюра в живом восприятии
                                     </h3>
-                                    <p class="descr events-slide__descr">
+                                    <p class="descr events-swiper__descr">
                                         Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.
                                     </p>
-                                    <a href="!#" class="events-slide__link">Подробнее</a>
+                                    <a href="!#" class="events-swiper__link">Подробнее</a>
                                 </div>
                             </div>
                             <div class="swiper-slide events-swiper__slide events-slide">
@@ -1073,24 +1036,24 @@
                                     <source media="(max-width: 500px)" srcset="img/adaptive/events/card2-1024.jpg">
                                     <source media="(max-width: 768px)" srcset="img/adaptive/events/card2-768.jpg">
                                     <source media="(max-width: 1024px)" srcset="img/adaptive/events/card2-1024.jpg">
-                                    <img src="img/events/card2.jpg" alt="" aria-hidden="true" class="events-slide__image">
+                                    <img src="img/events/card2.jpg" alt="" aria-hidden="true" class="events-swiper__image">
                                 </picture>
-                                <div class="events-slide__info">
-                                    <div class="events-slide__location">
-                                        <div class="events-slide__location-place">
+                                <div class="events-swiper__info">
+                                    <div class="events-swiper__location">
+                                        <div class="events-swiper__location-place">
                                             ММОМА
                                         </div>
-                                        <div class="events-slide__location-time">
+                                        <div class="events-swiper__location-time">
                                             24 марта 19:00
                                         </div>
                                     </div>
-                                    <h3 class="subtitle events-slide__title">
+                                    <h3 class="subtitle events-swiper__title">
                                         «Открытая дискуссия». Дмитрий Петров и Сергей Ильин.
                                     </h3>
-                                    <p class="descr events-slide__descr">
+                                    <p class="descr events-swiper__descr">
                                         Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.
                                     </p>
-                                    <a href="!#" class="events-slide__link">Подробнее</a>
+                                    <a href="!#" class="events-swiper__link">Подробнее</a>
                                 </div>
                             </div>
                             <div class="swiper-slide events-swiper__slide">
@@ -1098,24 +1061,24 @@
                                     <source media="(max-width: 500px)" srcset="img/adaptive/events/card3-1024.jpg">
                                     <source media="(max-width: 768px)" srcset="img/adaptive/events/card3-768.jpg">
                                     <source media="(max-width: 1024px)" srcset="img/adaptive/events/card3-1024.jpg">
-                                    <img src="img/events/card3.jpg" alt="" aria-hidden="true" class="events-slide__image">
+                                    <img src="img/events/card3.jpg" alt="" aria-hidden="true" class="events-swiper__image">
                                 </picture>
-                                <div class="events-slide__info">
-                                    <div class="events-slide__location">
-                                        <div class="events-slide__location-place">
+                                <div class="events-swiper__info">
+                                    <div class="events-swiper__location">
+                                        <div class="events-swiper__location-place">
                                             Еврейский музей
                                         </div>
-                                        <div class="events-slide__location-time">
+                                        <div class="events-swiper__location-time">
                                             с 31 марта по 21 апреля
                                         </div>
                                     </div>
-                                    <h3 class="subtitle events-slide__title">
+                                    <h3 class="subtitle events-swiper__title">
                                         Выставка «Формация 2020»
                                     </h3>
-                                    <p class="descr events-slide__descr">
+                                    <p class="descr events-swiper__descr">
                                         Идейные соображения высшего порядка, а также современная методология разработки играет важную роль в формировании глубокомысленных рассуждений.
                                     </p>
-                                    <a href="!#" class="events-slide__link">Подробнее</a>
+                                    <a href="!#" class="events-swiper__link">Подробнее</a>
                                 </div>
                             </div>
                             <div class="swiper-slide events-swiper__slide">
@@ -1123,24 +1086,24 @@
                                     <source media="(max-width: 500px)" srcset="img/adaptive/events/card4-1024.jpg">
                                     <source media="(max-width: 768px)" srcset="img/adaptive/events/card4-768.jpg">
                                     <source media="(max-width: 1024px)" srcset="img/adaptive/events/card4-1024.jpg">
-                                    <img src="img/events/card4.jpg" alt="" aria-hidden="true" class="events-slide__image">
+                                    <img src="img/events/card4.jpg" alt="" aria-hidden="true" class="events-swiper__image">
                                 </picture>
-                                <div class="events-slide__info">
-                                    <div class="events-slide__location">
-                                        <div class="events-slide__location-place">
+                                <div class="events-swiper__info">
+                                    <div class="events-swiper__location">
+                                        <div class="events-swiper__location-place">
                                             Третьяковка на Крымском валу
                                         </div>
-                                        <div class="events-slide__location-time">
+                                        <div class="events-swiper__location-time">
                                             с 30 марта по 30 апреля
                                         </div>
                                     </div>
-                                    <h3 class="subtitle events-slide__title">
+                                    <h3 class="subtitle events-swiper__title">
                                         XXIV Международная биеннале молодого искусства
                                     </h3>
-                                    <p class="descr events-slide__descr">
+                                    <p class="descr events-swiper__descr">
                                         Внезапно, реплицированные с зарубежных источников, современные исследования.
                                     </p>
-                                    <a href="!#" class="events-slide__link">Подробнее</a>
+                                    <a href="!#" class="events-swiper__link">Подробнее</a>
                                 </div>
                             </div>
                             <div class="swiper-slide events-swiper__slide">
@@ -1148,24 +1111,24 @@
                                     <source media="(max-width: 500px)" srcset="img/adaptive/events/card1-1024.jpg">
                                     <source media="(max-width: 768px)" srcset="img/adaptive/events/card5-768.jpg">
                                     <source media="(max-width: 1024px)" srcset="img/adaptive/events/card5-1024.jpg">
-                                    <img src="img/events/card5.jpg" alt="" aria-hidden="true" class="events-slide__image">
+                                    <img src="img/events/card5.jpg" alt="" aria-hidden="true" class="events-swiper__image">
                                 </picture>
-                                <div class="events-slide__info">
-                                    <div class="events-slide__location">
-                                        <div class="events-slide__location-place">
+                                <div class="events-swiper__info">
+                                    <div class="events-swiper__location">
+                                        <div class="events-swiper__location-place">
                                             ММАМ
                                         </div>
-                                        <div class="events-slide__location-time">
+                                        <div class="events-swiper__location-time">
                                             с 8 апреля по 20 мая
                                         </div>
                                     </div>
-                                    <h3 class="subtitle events-slide__title">
+                                    <h3 class="subtitle events-swiper__title">
                                         Джон Винзор. Фотографии из серии «Метафора серебра»
                                     </h3>
-                                    <p class="descr events-slide__descr">
+                                    <p class="descr events-swiper__descr">
                                         Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.
                                     </p>
-                                    <a href="!#" class="events-slide__link btn-reset">Подробнее</a>
+                                    <a href="!#" class="events-swiper__link btn-reset">Подробнее</a>
                                 </div>
                             </div>
                         </div>
