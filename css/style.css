@@ -2017,7 +2017,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .events-swiper__location {
-    margin-bottom: 5px;
+    margin-bottom: 11px;
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
@@ -2026,7 +2026,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .events-swiper__title {
-    margin-bottom: 3px;
+    margin-bottom: 10px;
+    width: 338px;
 }
 
 .events-swiper__descr {
@@ -2751,8 +2752,12 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 33px;
+    padding-top: 40px;
     padding-bottom: 37px;
+}
+
+.contacts-top__place {
+    margin-bottom: 5px;
 }
 
 .contacts-top__place-subtitle {
@@ -2765,7 +2770,7 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: space-between;
     margin-right: 10px;
     max-width: 909px;
-    width: 100%
+    width: 100%;
 }
 
 .form-contacts__label {
@@ -2884,7 +2889,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 47px 0;
+    padding: 43px 0;
 }
 
 .footer-social__list {
@@ -2968,6 +2973,7 @@ input[type=number]::-webkit-outer-spin-button {
     .form-top.form-top__active {
         opacity: 1;
         transform: translateX(0);
+        margin-top: 30px;
     }
     .form-top__submit {
         margin-right: 10px;
@@ -3026,11 +3032,12 @@ input[type=number]::-webkit-outer-spin-button {
         height: 42px;
     }
     .top-nav {
-        position: absolute;
+        position: fixed;
         z-index: 15;
         top: 0;
         left: 0;
         bottom: 0;
+        overflow-y: auto;
         background-color: rgba(0, 0, 0, 0.9);
         padding: 50px;
         padding-top: 37px;
@@ -3238,7 +3245,7 @@ input[type=number]::-webkit-outer-spin-button {
         margin-bottom: 30px;
     }
     .form-contacts {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 }
 
@@ -3336,6 +3343,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .top-submit__image--768 {
         display: block;
+        margin-left: 130px;
     }
     .top-close__image--big {
         display: block;
@@ -3343,6 +3351,9 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .form-top {
         width: 90%;
+    }
+    .form-top.form-top__active {
+        margin-top: 0px;
     }
     .form-top__input {
         margin-right: 25px;
@@ -3537,6 +3548,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .top-submit__image--320 {
         display: block;
+        margin-left: 95px;
     }
     .top-close__image--big {
         display: none;
@@ -3555,7 +3567,7 @@ input[type=number]::-webkit-outer-spin-button {
         margin-top: 5px;
     }
     .header-top__container {
-        padding-top: 13px;
+        padding-top: 10px;
         padding-bottom: 10px;
     }
     .top-nav {
@@ -3922,7 +3934,7 @@ input[type=number]::-webkit-outer-spin-button {
     .form-top.form-top__active {
         right: 0;
         padding-right: 15px;
-        padding-left: 57px;
+        margin-top: -10px;
         width: 100%;
         height: 53px;
         background-color: rgba(0, 0, 0, 0.9);
