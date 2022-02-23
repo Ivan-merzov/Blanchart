@@ -2752,7 +2752,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 40px;
+    padding-top: 42px;
     padding-bottom: 37px;
 }
 
@@ -2768,15 +2768,13 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 10px;
+    margin-right: 0px;
     max-width: 909px;
     width: 100%;
 }
 
 .form-contacts__label {
     position: relative;
-    margin-right: 10px;
-    margin-bottom: 10px;
 }
 
 .form-contacts__input {
@@ -2784,7 +2782,7 @@ input[type=number]::-webkit-outer-spin-button {
     min-height: 50px;
     border: 1px solid #333333;
     border-radius: 100px;
-    padding-left: 24px;
+    padding-left: 30px;
     transition-property: background-color;
     transition: .2s ease-in-out;
 }
@@ -2799,8 +2797,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .form-contacts__btn {
-    margin-bottom: 10px;
-    padding: 12.5px 35px;
+    margin-bottom: 0px;
+    padding: 10.5px 35px;
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;
@@ -2832,6 +2830,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .contacts-social__subtitle {
     margin-bottom: 8px;
+    margin-top: 5px;
 }
 
 .contacts-social__list {
@@ -3343,11 +3342,16 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .top-submit__image--768 {
         display: block;
-        margin-left: 130px;
+        margin-left: 15px;
     }
     .top-close__image--big {
         display: block;
         transform: translateY(-3px);
+    }
+    .footer-social__image.footer-social__icon {
+        width: 62px;
+        height: 62px;
+        margin-left: 10px;
     }
     .form-top {
         width: 90%;
@@ -3356,8 +3360,9 @@ input[type=number]::-webkit-outer-spin-button {
         margin-top: 0px;
     }
     .form-top__input {
-        margin-right: 25px;
-        margin-top: 30px;
+        width: 585px;
+        margin-right: 18px;
+        margin-top: 45px;
     }
     .gallery {
         padding-bottom: 75px;
@@ -3459,7 +3464,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .projects__descr {
         max-width: 659px;
-        margin-bottom: 24px;
+        margin-bottom: -3px;
     }
     .projects__subtitle {
         margin-bottom: 29px;
@@ -3536,6 +3541,7 @@ input[type=number]::-webkit-outer-spin-button {
     .descr {
         font-size: 14px;
         line-height: 28px;
+        padding-top: 50px;
     }
     .form-content__image--768 {
         display: none;
@@ -3548,7 +3554,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .top-submit__image--320 {
         display: block;
-        margin-left: 95px;
+        margin-left: 30px;
     }
     .top-close__image--big {
         display: none;
@@ -3564,7 +3570,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .form-top__input {
         margin-right: 34px;
-        margin-top: 5px;
+        margin-top: 4px;
     }
     .header-top__container {
         padding-top: 10px;
@@ -3697,6 +3703,9 @@ input[type=number]::-webkit-outer-spin-button {
         padding-top: 20px;
         order: 1;
         margin-bottom: 8px;
+        position: absolute;
+        margin-top: 366px;
+        margin-left: 70px;
     }
     .title-row {
         flex-direction: column;
@@ -3868,7 +3877,7 @@ input[type=number]::-webkit-outer-spin-button {
         padding-bottom: 20px;
     }
     .contacts-top__address {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     .form-contacts {
         flex-direction: column;
@@ -3879,6 +3888,7 @@ input[type=number]::-webkit-outer-spin-button {
     .form-contacts__input {
         width: 290px;
         min-height: 40px;
+        margin-bottom: 6px;
     }
     .form-contacts__btn--320 {
         display: block;
@@ -3923,7 +3933,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media (max-width: 320px) {
     .header-top__container {
-        padding-top: 14px;
+        padding-top: 27px;
     }
     .open-burger-btn__image--big {
         display: none;
@@ -3931,10 +3941,15 @@ input[type=number]::-webkit-outer-spin-button {
     .open-burger-btn__image--small {
         display: block;
     }
+    .contacts-social__image {
+        width: 50px;
+        height: 54px;
+        margin-top: 15px;
+    }
     .form-top.form-top__active {
         right: 0;
         padding-right: 15px;
-        margin-top: -10px;
+        margin-top: 4px;
         width: 100%;
         height: 53px;
         background-color: rgba(0, 0, 0, 0.9);
@@ -3946,7 +3961,7 @@ input[type=number]::-webkit-outer-spin-button {
         margin-bottom: 12px;
     }
     .gallery-descr {
-        padding-top: 0;
+        padding-top: 50px;
         font-weight: 600;
         font-size: 16px;
         line-height: 32px;
@@ -4103,6 +4118,10 @@ input[type=number]::-webkit-outer-spin-button {
         padding: 10px 34px;
         font-size: 12px;
         line-height: 16px;
+    }
+    .subtitle {
+        margin-bottom: -8px;
+        margin-top: -3px;
     }
     .projects-swiper-main {
         padding: 0 48px
