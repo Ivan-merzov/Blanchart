@@ -120,6 +120,14 @@ document.querySelector(".form-content__open").addEventListener("click", function
     this.classList.add("active");
 });
 
+// gallery select
+
+const element = document.querySelector('.gallery-form__list');
+const choices = new Choices(element, {
+    searchEnabled: false
+});
+
+
 document.addEventListener("click", function(e) {
     let target = e.target;
     let form = document.querySelector(".form-top");
@@ -157,83 +165,80 @@ document.addEventListener("click", function(e) {
     }
 })
 
-// gallery select
 
-const element = document.querySelector('.gallery-form__list');
-const choices = new Choices(element, {
-    searchEnabled: false
-});
-
-
-//gallery swiper
-
-const gallerySwiper = new Swiper(".gallery-swiper", {
-    slidesPerView: 3,
-    slidesPerGroup: 3,
+let gallerySlider = new Swiper(".slides-container", {
+    slidesPerView: 1,
     grid: {
-        rows: 2
+        rows: 1,
+        fill: "row"
     },
-    spaceBetween: 50,
+    spaceBetween: 20,
     pagination: {
-        el: ".gallery-swiper-pagination",
-        type: "fraction",
+        el: ".test-section .test-pagination",
+        type: "fraction"
     },
     navigation: {
-        nextEl: ".gallery-next",
-        prevEl: ".gallery-prev"
+        nextEl: ".test-next",
+        prevEl: ".test-prev"
     },
 
     breakpoints: {
-        320: {
-            slidesPerView: 1,
-            slidesPerGroup: 1,
-            grid: {
-                rows: 1
-            },
-            spaceBetween: 0,
-        },
-
-        576: {
+        441: {
             slidesPerView: 2,
-            slidesPerGroup: 2,
-            grid: {
-                rows: 2,
-            },
-            spaceBetween: 30,
-        },
-
-        700: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-            grid: {
-                rows: 2,
-            },
-            spaceBetween: 30,
-        },
-
-        1200: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
             grid: {
                 rows: 2
             },
-            spaceBetween: 34,
+            spaceBetween: 30
         },
 
-        1500: {
+        1200: {
             slidesPerView: 3,
             grid: {
                 rows: 2
             },
-            spaceBetween: 45,
+            spaceBetween: 50
         }
     },
 
-    a11y: {
-        prevSlideMessage: 'Предыдущий',
-        nextSlideMessage: 'Следующий',
+    a11y: false,
+    keyboard: true, // можно управлять с клавиатуры стрелками влево/вправо
+
+    // Дальнейшие надстройки делают слайды вне области видимости не фокусируемыми 
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    slideVisibleClass: 'slide-visible',
+
+    on: {
+        init: function() {
+            this.slides.forEach(slide => {
+                if (!slide.classList.contains('slide-visible')) {
+                    slide.tabIndex = '-1';
+                } else {
+                    slide.tabIndex = '';
+                }
+            });
+        },
+        slideChange: function() {
+            this.slides.forEach(slide => {
+                if (!slide.classList.contains('slide-visible')) {
+                    slide.tabIndex = '-1';
+                } else {
+                    slide.tabIndex = '';
+                }
+            });
+        }
     }
+
+    // on: {
+    //   /* исправляет баг с margin-top остающимся при смене брейкпоинта, это было нужно в 6-й версии свайпера */
+    //   beforeResize: function () {
+    //     this.slides.forEach((el) => {
+    //       el.style.marginTop = "";
+    //     });
+    //   }
+    // }
 });
+
 
 //catalog tabs
 document.addEventListener("DOMContentLoaded", function() {
@@ -385,87 +390,6 @@ eventsPrev.addEventListener('click', () => {
 });
 eventsNext.addEventListener('click', () => {
     eventsSwiper.eventsNext();
-});
-
-// public
-
-const publicSwiper = new Swiper(".public-swiper", {
-    slidesPerView: 3,
-    slidesPerGroup: 1,
-    grid: {
-        rows: 1,
-    },
-    spaceBetween: 50,
-    pagination: {
-        el: ".public-pagination",
-        type: "fraction",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".public-next",
-        prevEl: ".public-prev"
-    },
-    breakpoints: {
-        320: {
-            spaceBetween: 30,
-            allowTouchMove: false,
-
-        },
-        321: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-            allowTouchMove: true,
-        },
-
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 34,
-        },
-
-        1024: {
-            slidesPerView: 2,
-            spaceBetween: 50,
-        },
-
-        1201: {
-            slidesPerView: 3,
-        },
-    },
-});
-
-const publicPrev = document.getElementById('publicPrev')
-const publicNext = document.getElementById('publicNext')
-
-publicPrev.addEventListener('click', () => {
-    publicSwiper.eventsPrev();
-});
-publicNext.addEventListener('click', () => {
-    publicSwiper.eventsNext();
-});
-
-//public spoiler
-
-let titleBtn = document.querySelector(".form-categories__title");
-let checklist = document.querySelector(".form-categories__list");
-titleBtn.addEventListener("click", function() {
-    checklist.classList.toggle("form-categories__list--active");
-    document.querySelectorAll(".form-categories__label").forEach(el => {
-        el.classList.toggle("active");
-        let checkbox = el.querySelector(".form-categories__input");
-
-        if (checkbox.checked) {
-            el.classList.add("active");
-        }
-    })
-});
-
-document.querySelectorAll(".form-categories__label").forEach(el => {
-    el.addEventListener("click", function() {
-        let label = this;
-        if (checklist.classList.contains(".form-categories__list--active")) {
-            label.classList.remove("active");
-        }
-    });
 });
 
 
