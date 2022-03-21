@@ -1,0 +1,129 @@
+
+        <!-- Место для gallery -->
+
+        <!-- test-section = gallery-section
+             test-left-elem = gallery-left-elem
+             test-title = gallery-title
+             test-swiper = gallery-swiper
+             test-navigation = gallery-navigation
+             test-prev = gallery-prev 
+             test-pagination = gallery-pagination
+             test-next = gallery-next
+             test-slide = gallery-slide
+             test-image = gallery-image
+             test-last = gallery-last
+             test-last-content = gallery-last-content
+             test-last-content__p = gallery-last-content__p -->
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="content-wrap">
+                    <div class="gallery-left-elem">
+                        <h2 class="gallery-title">Галерея</h2>
+                        <div class="gallery-left gallery-form">
+                            <h3 class="gallery-form__title">Фильтр:</h3>
+                            <select name="form-select" class="gallery-form__list">
+                <option value="Живопись" class="gallery-form__item">Живопись</option>
+                <option value="Рисунок" class="gallery-form__item">Рисунок</option>
+                <option value="Скульптура" class="gallery-form__item">Скульптура</option>
+              </select>
+                        </div>
+                    </div>
+                    <div class="gallery-swiper">
+                        <div class="gallery-navigation">
+                            <button class="nav-btn gallery-prev" aria-label="К предыдущему слайду"></button>
+                            <div class="gallery-pagination"></div>
+                            <button class="nav-btn gallery-next" aria-label="К следующему слайду"></button>
+                        </div>
+                        <div class="swiper-container slides-container">
+                            <div class="swiper-wrapper">
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source src="img/gallery/gallery-slides2-6.jpg" media="(max-width: 580px)">
+                                        <source src="img/gallery/gallery-slides2-4.jpg" media="(max-width: 960px)">
+                                        <source src="img/gallery/gallery-slides2-5.jpg" media="(max-width: 1360px)">
+
+                                        <!-- Здесь картинка от 1361 до 1920 и выше -->
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-1.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides1-2.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-2.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides1-3.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-3.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides1-4.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-4.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides1-5.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-5.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides1-6.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-6.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides2-1.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides2-1.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides2-2.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides2-2.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides1-1.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-1.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides1-1.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-1.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides1-1.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-1.jpg" alt="">
+                                    </picture>
+                                </a>
+                                <a class="swiper-slide gallery-slide" href="#">
+                                    <picture>
+                                        <source srcset="img/gallery/gallery-slides1-1.jpg" media="(min-width: 1024px)">
+                                        <img class="gallery-image" src="img/gallery/gallery-slides1-1.jpg" alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-last">
+
+                        <div class="gallery-last-content">
+                            <p class="gallery-last-content__p">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a class="test-last-content__link">авторизуйтесь</a>, либо воспользуйтесь лицензией</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
