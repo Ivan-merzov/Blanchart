@@ -174,12 +174,12 @@ let gallerySlider = new Swiper(".slides-container", {
     },
     spaceBetween: 20,
     pagination: {
-        el: ".test-section .test-pagination",
+        el: ".gallery-section .gallery-pagination",
         type: "fraction"
     },
     navigation: {
-        nextEl: ".test-next",
-        prevEl: ".test-prev"
+        nextEl: ".gallery-next",
+        prevEl: ".gallery-prev"
     },
 
     breakpoints: {
@@ -300,7 +300,7 @@ $("#accordion").accordion({
     //active: 0,
 });
 
-
+/*
 //events
 const eventsSwiper = new Swiper(".events-swiper", {
     slidesPerView: 3,
@@ -371,26 +371,142 @@ const eventsSwiper = new Swiper(".events-swiper", {
         prevSlideMessage: 'Предыдущий',
         nextSlideMessage: 'Следующий',
     }
+*/
+// on: {
+//   /* исправляет баг с margin-top остающимся при смене брейкпоинта, это было нужно в 6-й версии свайпера */
+//   beforeResize: function () {
+//     this.slides.forEach((el) => {
+//       el.style.marginTop = "";
+//     });
+//   }
+// }
 
-    // on: {
-    //   /* исправляет баг с margin-top остающимся при смене брейкпоинта, это было нужно в 6-й версии свайпера */
-    //   beforeResize: function () {
-    //     this.slides.forEach((el) => {
-    //       el.style.marginTop = "";
-    //     });
-    //   }
-    // }
-});
 
-const eventsPrev = document.getElementById('eventsPrev')
-const eventsNext = document.getElementById('eventsNext')
+(() => {
+    const MOBILE_WIDTH = 580;
+    const DESKTOP_WIDTH = 961;
+    const btn = document.querySelector(".js-show");
 
-eventsPrev.addEventListener('click', () => {
-    eventsSwiper.eventsPrev();
-});
-eventsNext.addEventListener('click', () => {
-    eventsSwiper.eventsNext();
-});
+    const sliderMobileParams = {
+        paginationClassName: "events-pagination",
+        cardsContainerName: "js-slider",
+        cardsWrapName: "js-slides-wrap",
+        card: "slide",
+        hiddenClass: "is-hidden"
+    };
+
+    function getWindowWidth() {
+        return Math.max(
+            document.body.scrollWidth,
+            document.documentElement.scrollWidth,
+            document.body.offsetWidth,
+            document.documentElement.offsetWidth,
+            document.body.clientWidth,
+            document.documentElement.clientWidth
+        );
+    }
+
+    function activateMobileSlider(params) {
+        const pagination = document.createElement("div");
+        pagination.classList.add(params.paginationClassName);
+        params.cardsContainer.append(pagination);
+
+        params.cardsContainer.classList.add("swiper-container");
+        params.cardsWrap.classList.add("swiper-wrapper");
+
+        params.cardsSlider = new Swiper(`.${params.cardsContainerName}`, {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: `.${params.cardsContainerName} .${params.paginationClassName}`
+            },
+
+            on: {
+                beforeInit() {
+                    document.querySelectorAll(`.${params.card}`).forEach((el) => {
+                        el.classList.add("swiper-slide");
+                    });
+                },
+
+                beforeDestroy() {
+                    this.slides.forEach((el) => {
+                        el.classList.remove("swiper-slide");
+                        el.removeAttribute("role");
+                        el.removeAttribute("aria-label");
+                    });
+
+                    this.pagination.el.remove();
+                }
+            }
+        });
+    }
+
+    function destroyMobileSlider(params) {
+        params.cardsSlider.destroy();
+        params.cardsContainer.classList.remove("swiper-container");
+        params.cardsWrap.classList.remove("swiper-wrapper");
+        params.cardsWrap.removeAttribute("aria-live");
+        params.cardsWrap.removeAttribute("id");
+    }
+
+    function setHiddenCards(params, windowWidth) {
+        const cards = document.querySelectorAll(`.${params.card}`);
+        let quantity = cards.length;
+
+        if (windowWidth > MOBILE_WIDTH && windowWidth < DESKTOP_WIDTH) {
+            quantity = 2;
+        }
+
+        if (windowWidth >= DESKTOP_WIDTH) {
+            quantity = 3;
+        }
+
+        cards.forEach((card, i) => {
+            card.classList.remove(params.hiddenClass);
+            if (i >= quantity) {
+                card.classList.add(params.hiddenClass);
+            }
+        });
+    }
+
+    function showCards(e) {
+        const cards = document.querySelectorAll(`.${sliderMobileParams.card}`);
+
+        e.target.style = "display: none";
+
+        cards.forEach((card) => {
+            card.classList.remove(sliderMobileParams.hiddenClass);
+        });
+    }
+
+    function checkWindowWidthMobile(params) {
+        const currentWidth = getWindowWidth();
+        btn.style = "";
+        params.cardsContainer = document.querySelector(
+            `.${params.cardsContainerName}`
+        );
+        params.cardsWrap = document.querySelector(`.${params.cardsWrapName}`);
+
+        if (
+            currentWidth <= MOBILE_WIDTH &&
+            (!params.cardsSlider || params.cardsSlider.destroyed)
+        ) {
+            activateMobileSlider(params);
+        } else if (currentWidth > MOBILE_WIDTH && params.cardsSlider) {
+            destroyMobileSlider(params);
+        }
+
+        setHiddenCards(params, currentWidth);
+    }
+
+    checkWindowWidthMobile(sliderMobileParams);
+    btn.addEventListener("click", showCards);
+
+    window.addEventListener("resize", function() {
+        checkWindowWidthMobile(sliderMobileParams);
+    });
+})();
+
 
 
 
