@@ -472,7 +472,7 @@ const eventsSwiper = new Swiper(".events-swiper", {
     function showCards(e) {
         const cards = document.querySelectorAll(`.${sliderMobileParams.card}`);
 
-        e.target.style = "display: none";
+        e.target.style = "display: block";
 
         cards.forEach((card) => {
             card.classList.remove(sliderMobileParams.hiddenClass);
@@ -507,6 +507,20 @@ const eventsSwiper = new Swiper(".events-swiper", {
     });
 })();
 
+
+// КНОПКА ВСЕ СОБЫТИЯ
+let btnEvent = document.querySelector(".js-show");
+let eventsHidden = document.querySelectorAll('.events__hidden');
+btnEvent.addEventListener("click", showEvent);
+
+function showEvent() {
+    eventsHidden.forEach(function(el) {
+        el.classList.toggle('events__show');
+    })
+    btnEvent.innerHTML = (btnEvent.innerHTML === 'Все события') ? btnEvent.innerHTML = 'Скрыть всё' : btnEvent.innerHTML = 'Все события';
+
+    btnEvent.classList.toggle('js-show_margin');
+};
 
 
 
